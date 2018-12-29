@@ -5,8 +5,11 @@ from recoList import (recoWXList)
 from phoneOperation import (tapPoint,tapBack)
 from recoRedPack import (recoRedPacket)
 from recoOpen import (recoOpen)
+from recoResult import (recoSuccess,recoFail)
 
-# saveImg('open_screencap.png')
+
+
+# saveImg('open_result.png',True)
 
 
 # while True:
@@ -15,8 +18,7 @@ from recoOpen import (recoOpen)
 #     recoListRes = recoWXList()
 #     print(recoListRes,'recoListRes')
 
-name = 'asd'
 
-strs =  'ceshi '+name?name:''+' ceshi'
-
-
+isSucc = recoSuccess()
+isFail = recoFail()
+print(isSucc,isFail)
