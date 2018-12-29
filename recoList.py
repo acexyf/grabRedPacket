@@ -29,8 +29,10 @@ def recoWXList():
         itemx = pt[0]
         itemy = pt[1]
         imgRGB = receive[itemy - highDiff, toLeft]
-        # print((itemx, itemy),imgRGB, np.array_equal(imgRGB, [62,62,255]))
-        if np.array_equal(imgRGB, [62,62,255]):
+        # 左上角是否有小圆圈，判断是否领过
+        hasRedDot = np.array_equal(imgRGB, [62,62,255])
+        hasRedDot = True
+        if hasRedDot:
             recoList.append((itemx, itemy))
 
     if len(recoList):

@@ -20,19 +20,25 @@ while True:
         if len(redRes):
             # 点击领取红包
             tapPoint(redRes)
-            time.sleep(0.5)
-            saveImg('open_screencap.png')
-            openRes = recoOpen()
-            if len(openRes):
-                # 识别到开红包
-                tapPoint(openRes)
-                time.sleep(2)
+
+            lastOpenRes = ()
+
+            for index in range(8):
+                saveImg('open_screencap.png')
+                openRes = recoOpen()
+                if len(openRes):
+                    lastOpenRes = openRes
+                    break;
+            
+            if len(lastOpenRes):
+                tapPoint(lastOpenRes)
                 tapBack()
                 tapBack()
             else:
-                # 没识别到开红包，领取完了
                 tapBack()
                 tapBack()
+
+
         else:
             # 没识别到，返回
             tapBack()
