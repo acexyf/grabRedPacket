@@ -2,18 +2,16 @@ import cv2
 import numpy as np
 
 
-
-
 highDiff = 60
 toLeft = 125
-recoList = []
+
 
 recoPath = './screencap_img/list.png'
 templatePath = './template_img/list_red_tmp.jpg'
 
 
 def recoWXList():
-
+    recoList = []
     receive = cv2.imread(recoPath)
     receive_gray = cv2.cvtColor(receive,cv2.COLOR_BGR2GRAY)
 
@@ -31,7 +29,8 @@ def recoWXList():
         itemx = pt[0]
         itemy = pt[1]
         imgRGB = receive[itemy - highDiff, toLeft]
-        if imgRGB == [62,62,255]:
+        # print((itemx, itemy),imgRGB, np.array_equal(imgRGB, [62,62,255]))
+        if np.array_equal(imgRGB, [62,62,255]):
             recoList.append((itemx, itemy))
 
     if len(recoList):
