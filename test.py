@@ -6,7 +6,7 @@ from phoneOperation import (tapPoint,tapBack)
 from recoRedPack import (recoRedPacket)
 from recoOpen import (recoOpen)
 
-saveImg('open_screencap.png')
+# saveImg('open_screencap.png')
 
 
 # while True:
@@ -14,3 +14,9 @@ saveImg('open_screencap.png')
 #     saveImg('list.png', True)
 #     recoListRes = recoWXList()
 #     print(recoListRes,'recoListRes')
+
+name = 'asd'
+
+strs =  'ceshi '+name?name:''+' ceshi'
+
+
